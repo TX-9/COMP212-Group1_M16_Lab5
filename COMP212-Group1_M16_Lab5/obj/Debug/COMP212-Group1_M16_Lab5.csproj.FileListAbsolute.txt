@@ -1,6 +1,5 @@
 D:\MEGA\VS2015\Projects\COMP212\labs\COMP212-Group1_M16_Lab5\COMP212-Group1_M16_Lab5\bin\Debug\COMP212-Group1_M16_Lab5.exe.config
 D:\MEGA\VS2015\Projects\COMP212\labs\COMP212-Group1_M16_Lab5\COMP212-Group1_M16_Lab5\bin\Debug\COMP212-Group1_M16_Lab5.exe
 D:\MEGA\VS2015\Projects\COMP212\labs\COMP212-Group1_M16_Lab5\COMP212-Group1_M16_Lab5\bin\Debug\COMP212-Group1_M16_Lab5.pdb
-D:\MEGA\VS2015\Projects\COMP212\labs\COMP212-Group1_M16_Lab5\COMP212-Group1_M16_Lab5\obj\Debug\COMP212-Group1_M16_Lab5.csprojResolveAssemblyReference.cache
 D:\MEGA\VS2015\Projects\COMP212\labs\COMP212-Group1_M16_Lab5\COMP212-Group1_M16_Lab5\obj\Debug\COMP212-Group1_M16_Lab5.exe
 D:\MEGA\VS2015\Projects\COMP212\labs\COMP212-Group1_M16_Lab5\COMP212-Group1_M16_Lab5\obj\Debug\COMP212-Group1_M16_Lab5.pdb

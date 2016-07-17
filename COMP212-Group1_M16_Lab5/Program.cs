@@ -12,15 +12,15 @@ namespace COMP212_Group1_M16_Lab5
     {
         static void Main(string[] args)
         {
-            string dirpath = Directory.GetCurrentDirectory();
-
+            var InputLinkedList = new LinkedList<char>();
             var OriginalLinkedList = new LinkedList<char>();
             var KeyLinkedList = new LinkedList<char>();
             var CodedLinkedList = new LinkedList<char>();
-            var CodedLinkedList2 = new LinkedList<char>();
             var DecodedLinkedList = new LinkedList<char>();
+
             var coded = new StringBuilder();
             var decoded = new StringBuilder();
+
             string input;
 
             using (StreamReader r = new StreamReader(@"data.txt"))
@@ -35,49 +35,12 @@ namespace COMP212_Group1_M16_Lab5
                     KeyLinkedList.AddLast((char)@char);
 
                 Console.Write("Word to encode  :");
-                input = Console.ReadLine();
-
-
+                input = Console.ReadLine();            
                 foreach (char inputVal in input)
-                {
-                    int nodeIdx = -1;
-                    //get the first node to interate
-                    for (LinkedListNode<char> node = OriginalLinkedList.First; node != null; )
-                    {
-                        ++nodeIdx;
-                        char nodeVal = (char)node.Value;
+                    InputLinkedList.AddLast(inputVal);
 
-                        if (inputVal == nodeVal)
-                        {
-                            CodedLinkedList.AddLast(KeyLinkedList.ElementAt(nodeIdx));
-                            break;
-                        }
-
-                        //move to next node
-                        LinkedListNode<char> next = node.Next;
-                        node = next;
-                    }
-                }
-
-                foreach (char inputVal in CodedLinkedList)
-                {
-                    int idx = -1;
-                    //get the first node to interate
-                    for (LinkedListNode<char> node = KeyLinkedList.First; node != null; )
-                    {
-                        char nodeVal = (char)node.Value;
-                        ++idx;
-                        if (inputVal == nodeVal)
-                        {
-                            DecodedLinkedList.AddLast(OriginalLinkedList.ElementAt(idx));
-                            break;
-                        }
-
-                        //move to next node
-                        LinkedListNode<char> next = node.Next;
-                        node = next;
-                    }
-                }
+                Ciphering(InputLinkedList, CodedLinkedList, OriginalLinkedList, KeyLinkedList);
+                Ciphering(CodedLinkedList, DecodedLinkedList, KeyLinkedList, OriginalLinkedList);
 
                 foreach (char c in CodedLinkedList)
                     coded.Append(c);
@@ -85,11 +48,38 @@ namespace COMP212_Group1_M16_Lab5
                 foreach (char c in DecodedLinkedList)
                     decoded.Append(c);
             }
-
+            
             Console.Write("Encoded word    :");
             Console.WriteLine(coded);
             Console.Write("Decoded word    :");
             Console.WriteLine(decoded);
+
+        }
+        private static void Ciphering(LinkedList<char> InList, LinkedList<char> OutList, LinkedList<char> OriginalList, LinkedList<char> KeyList)
+        {
+            foreach (char inputVal in InList)
+            {
+                int idx = -1;
+                bool isNotFound = true;
+
+                for (LinkedListNode<char> node = OriginalList.First; node != null;)
+                {
+                    char nodeVal = (char)node.Value;
+                    ++idx;
+                    if (inputVal == nodeVal)
+                    {
+                        OutList.AddLast(KeyList.ElementAt(idx));
+                        isNotFound = false;
+                        break;
+                    }
+
+                    //move to next node
+                    LinkedListNode<char> next = node.Next;
+                    node = next;
+                }
+                if (isNotFound)
+                    OutList.AddLast(inputVal);
+            }
         }
     }
 }
