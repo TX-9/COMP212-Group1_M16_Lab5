@@ -78,6 +78,7 @@ namespace COMP212_Group1_M16_Lab5
                         node = next;
                     }
                 }
+
                 foreach (char c in CodedLinkedList)
                     coded.Append(c);
 
