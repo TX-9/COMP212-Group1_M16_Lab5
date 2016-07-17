@@ -20,7 +20,6 @@ namespace COMP212_Group1_M16_Lab5
             var CodedLinkedList2 = new LinkedList<char>();
             var DecodedLinkedList = new LinkedList<char>();
             var coded = new StringBuilder();
-            var coded2 = new StringBuilder();
             var decoded = new StringBuilder();
             string input;
 
