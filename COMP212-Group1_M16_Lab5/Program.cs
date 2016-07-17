@@ -33,7 +33,7 @@ namespace COMP212_Group1_M16_Lab5
 
                 while (((@char = r.Read()) != -1) && (@char != 13))
                     KeyLinkedList.AddLast((char)@char);
-
+            }
                 Console.Write("Word to encode  :");
                 input = Console.ReadLine();            
                 foreach (char inputVal in input)
@@ -47,7 +47,7 @@ namespace COMP212_Group1_M16_Lab5
 
                 foreach (char c in DecodedLinkedList)
                     decoded.Append(c);
-            }
+            
             
             Console.Write("Encoded word    :");
             Console.WriteLine(coded);
