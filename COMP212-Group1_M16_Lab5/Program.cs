@@ -62,6 +62,7 @@ namespace COMP212_Group1_M16_Lab5
                 foreach (char inputVal in CodedLinkedList)
                 {
                     int idx = -1;
+
                     //get the first node to interate
                     for (LinkedListNode<char> node = KeyLinkedList.First; node != null; )
                     {
